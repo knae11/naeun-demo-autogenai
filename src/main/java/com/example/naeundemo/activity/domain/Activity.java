@@ -17,13 +17,13 @@ public class Activity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String model;
     private String action;
+    private String model;
     @CreatedDate
     private LocalDateTime time;
 
-    public Activity(String model, String action) {
-        this.model = model;
+    public Activity(String action, String model) {
         this.action = action;
+        this.model = model;
     }
 }
