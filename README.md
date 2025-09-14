@@ -22,3 +22,10 @@ curl --location 'http://localhost:8080/summarise' \
 curl --location 'http://localhost:8080/usage/hopeful-ai?since=2025-01-01' \
 --header 'Content-Type: application/json'
 ```
+
+# Todo
+- [ ] Develop API summarise request to get different response by input model.
+- [ ] Develop list up api by model parameters.
+- [ ] Develop pagination list up api.
+- [ ] Write test code.
+- [ ] Implement front-end code from original repo. 
