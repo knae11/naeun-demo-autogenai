@@ -52,7 +52,7 @@ class TextCompletionControllerTest {
 
     @Test
     void summarise() throws Exception {
-        CompletionRequestDto request = new CompletionRequestDto("input sample");
+        CompletionRequestDto request = new CompletionRequestDto("hopeful-ai", "input sample");
         CompletionResponseDto response = new CompletionResponseDto(List.of("sample answer1", "sample answer2"));
         when(textCompletionService.summarise(any(CompletionRequestDto.class))).thenReturn(response);
 
@@ -62,6 +62,7 @@ class TextCompletionControllerTest {
                 .andExpect(status().isOk())
                 .andDo(document.document(
                         requestFields(
+                                fieldWithPath("model").description("model"),
                                 fieldWithPath("input").description("input text")
                         ),
                         responseFields(

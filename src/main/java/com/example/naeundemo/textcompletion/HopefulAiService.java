@@ -1,12 +1,12 @@
 package com.example.naeundemo.textcompletion;
 
 import com.example.naeundemo.activity.ActivityService;
-import com.example.naeundemo.textcompletion.dto.HopefulAIResponse;
+import com.example.naeundemo.textcompletion.dto.AIResponse;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 @Service
-public class HopefulAiService {
+public class HopefulAiService implements AiService {
     private static final int MIN_RESPONSE_TIME = 50;
     private static final int MAX_RESPONSE_TIME = 100;
     private static final int SUCCESS_RATE = 1;
@@ -18,10 +18,10 @@ public class HopefulAiService {
     }
 
     @Transactional
-    public HopefulAIResponse makePostRequest(String prompt, String action) {
+    public AIResponse makePostRequest(String prompt, String action) {
         activityService.recordActivity(action, "hopeful-ai");
         String text = generateText(prompt);
-        return new HopefulAIResponse(text);
+        return new AIResponse(text);
     }
 
     private String generateText(String prompt) {
