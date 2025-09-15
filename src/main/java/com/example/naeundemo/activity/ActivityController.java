@@ -1,11 +1,13 @@
 package com.example.naeundemo.activity;
 
-import com.example.naeundemo.activity.domain.Activity;
+import com.example.naeundemo.activity.dto.ActivityPageResponseDto;
 import com.example.naeundemo.activity.dto.ActivityRequestDto;
-import java.util.List;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -17,7 +19,10 @@ public class ActivityController {
     }
 
     @GetMapping("usage")
-    public ResponseEntity<List<Activity>> activity(@ModelAttribute ActivityRequestDto request) {
-        return ResponseEntity.ok(activityService.getHopefulAiUsage(request));
+    public ResponseEntity<ActivityPageResponseDto> activity(@RequestParam(defaultValue = "10") Integer size,
+                                                            @RequestParam(defaultValue = "1") Integer page,
+                                                            @ModelAttribute ActivityRequestDto request) {
+        Pageable pageable = PageRequest.of(page - 1, size);
+        return ResponseEntity.ok(activityService.getHopefulAiUsage(pageable, request));
     }
 }
