@@ -40,4 +40,20 @@ curl --location 'http://localhost:8080/usage/hopeful-ai?since=2025-01-01' \
 - [x] Develop list up api by model parameters.
 - [x] Develop pagination list up api.
 - [x] Write test code.
-- [ ] Implement front-end code from original repo. 
+- [x] Implement front-end code from original repo. [cloned repo](https://github.com/knae11/naeun-demo-autogenai-ts)
+  - checkout to branch 0912
+  - `npm run dev --prefix ./frontend`. front-server port: `3001`
+
+## To run
+### front
+1. clone: [cloned from original repo](https://github.com/knae11/naeun-demo-autogenai-ts) 
+2. checkout branch to `0912`
+3. `npm run dev --prefix ./frontend`. 
+4. access `http://localhost:3001`
+
+### back
+1. clone: this repo
+2. checkout branch to `naeun-develop`
+3. `./gradlew bootRun`
+4. if you want to access in-memory DB, access to `http://localhost:8080/h2-console`
+5. if you want to see API specification, run test code `./gradlew test` and see `src/docs/asciidoc/index.adoc`
