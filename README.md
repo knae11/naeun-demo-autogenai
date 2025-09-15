@@ -37,7 +37,7 @@ curl --location 'http://localhost:8080/usage/hopeful-ai?since=2025-01-01' \
 
 - [x] Documentate APIs with test.
 - [x] Develop API summarise request to get different response by input model.
-- [ ] Develop list up api by model parameters.
+- [x] Develop list up api by model parameters.
 - [ ] Develop pagination list up api.
 - [ ] Write test code.
 - [ ] Implement front-end code from original repo. 

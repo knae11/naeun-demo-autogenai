@@ -2,6 +2,8 @@ package com.example.naeundemo.activity;
 
 import com.example.naeundemo.activity.domain.Activity;
 import com.example.naeundemo.activity.dto.ActivityRequestDto;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +17,12 @@ public class ActivityService {
     }
 
     public List<Activity> getHopefulAiUsage(ActivityRequestDto request) {
-        return activityRepository.findAllByTimeGreaterThanEqualOrderByTimeDesc(request.getSince());
+        LocalDateTime since = toDateTime(request.getSince());
+        return activityRepository.findAllByModelAndTime(request.getModel(), since);
+    }
+
+    private LocalDateTime toDateTime(LocalDate date){
+        return date.atStartOfDay();
     }
 
     public void recordActivity(String action, String model) {

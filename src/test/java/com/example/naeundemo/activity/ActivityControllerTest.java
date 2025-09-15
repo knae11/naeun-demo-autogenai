@@ -59,7 +59,8 @@ class ActivityControllerTest {
         when(activityService.getHopefulAiUsage(any())).thenReturn(activities);
 
         // when & then
-        mockMvc.perform(get("/usage/hopeful-ai")
+        mockMvc.perform(get("/usage")
+                        .param("model", "hopeful-ai")
                         .param("since", "2025-09-01")
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())

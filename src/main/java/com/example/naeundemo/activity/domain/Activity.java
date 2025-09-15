@@ -30,4 +30,9 @@ public class Activity {
         this.action = action;
         this.model = model;
     }
+    public Activity(String action, String model, LocalDateTime time) {
+        this.action = action;
+        this.model = model;
+        this.time = time;
+    }
 }

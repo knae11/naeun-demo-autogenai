@@ -16,7 +16,7 @@ public class ActivityController {
         this.activityService = activityService;
     }
 
-    @GetMapping("usage/hopeful-ai")
+    @GetMapping("usage")
     public ResponseEntity<List<Activity>> activity(@ModelAttribute ActivityRequestDto request) {
         return ResponseEntity.ok(activityService.getHopefulAiUsage(request));
     }
