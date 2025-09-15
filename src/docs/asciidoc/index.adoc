@@ -1,0 +1,31 @@
+:toc: left
+:toclevels: 2
+
+== Activity
+=== curl request
+include::{snippets}/activity-controller-test/activity/curl-request.adoc[]
+
+=== HTTP request
+include::{snippets}/activity-controller-test/activity/http-request.adoc[]
+
+=== Response Fields
+include::{snippets}/activity-controller-test/activity/response-fields.adoc[]
+
+=== HTTP response
+include::{snippets}/activity-controller-test/activity/http-response.adoc[]
+
+== Summarise
+=== curl request
+include::{snippets}/text-completion-controller-test/summarise/curl-request.adoc[]
+
+=== HTTP request
+include::{snippets}/text-completion-controller-test/summarise/http-request.adoc[]
+
+=== Request Fields
+include::{snippets}/text-completion-controller-test/summarise/request-fields.adoc[]
+
+=== Response Fields
+include::{snippets}/text-completion-controller-test/summarise/response-fields.adoc[]
+
+=== HTTP response
+include::{snippets}/text-completion-controller-test/summarise/http-response.adoc[]

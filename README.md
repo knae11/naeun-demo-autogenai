@@ -24,6 +24,7 @@ curl --location 'http://localhost:8080/usage/hopeful-ai?since=2025-01-01' \
 ```
 
 # Todo
+- [ ] Documentate APIs with test.
 - [ ] Develop API summarise request to get different response by input model.
 - [ ] Develop list up api by model parameters.
 - [ ] Develop pagination list up api.
